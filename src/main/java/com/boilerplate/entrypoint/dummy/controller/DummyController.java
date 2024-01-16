@@ -13,8 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @Slf4j
 @RestController
 @RequestMapping(value = "/boilerplate/dummy")
@@ -32,6 +30,6 @@ public class DummyController {
 
         DummyResponse response = modelMapper.map(dummy, DummyResponse.class);
         log.info("[{}] - NEW DUMMY CREATED - {}", response.getId(), response.getName());
-        return new ResponseEntity<DummyResponse>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
